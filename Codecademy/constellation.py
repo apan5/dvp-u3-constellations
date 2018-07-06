@@ -27,7 +27,7 @@
 # `from mpl_toolkits.mplot3d import Axes3D`
 # 
 
-# In[1]:
+# In[2]:
 
 
 get_ipython().run_line_magic('matplotlib', 'notebook')
@@ -43,7 +43,7 @@ from mpl_toolkits.mplot3d import Axes3D
 # 
 # Spend some time looking at `x`, `y`, and `z`, does each fall within a range?
 
-# In[2]:
+# In[3]:
 
 
 # Orion
@@ -66,12 +66,12 @@ z = [2.06, 0.84, 1.56, 2.07, 2.36, 1.72, 0.66, 1.25,1.38]
 # 
 # Does the 2D visualization look like the Orion constellation we see in the night sky? Do you recognize its shape in 2D? There is a curve to the sky, and this is a flat visualization, but we will visualize it in 3D in the next step to get a better sense of the actual star positions. 
 
-# In[3]:
+# In[7]:
 
 
 fig = plt.figure()
-fig.add_subplot(1,1,1)
-plt.scatter(x,y)
+ax = fig.add_subplot(1,1,1)
+ax.scatter(x,y)
 plt.title("Orion 2D")
 plt.show()
 
@@ -101,12 +101,12 @@ plt.show()
 # Render your visualization. (hint `plt.show()`.)
 # 
 
-# In[4]:
+# In[9]:
 
 
 fig_3d = plt.figure()
-fig_3d.add_subplot(1,1,1,projection="3d")
-constellation3d = plt.scatter(x,y,z)
+ax = fig_3d.add_subplot(1,1,1,projection="3d")
+constellation3d = ax.scatter(x,y,z)
 plt.title("Orion 3D")
 plt.show()
 
